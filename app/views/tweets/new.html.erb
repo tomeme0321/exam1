@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+   <%= form_for(@tweet, url: confirm_tweets_path) do |f| %>
+ <% if @tweet.errors.any? %>
+  <div id="error_explanation">
+     <h2><%= @tweet.errors.count %>件のエラーがあります</h2>
+         <% @tweet.errors.full_messages.each do |msg| %>
+         <%= msg %>
+         <% end %>
+  </div>
+ <% end %>
+ <br>
+ <%= f.text_field :content, class: 'form-control' %>
+ <br>
+ <%= f.submit "ツイート", class: 'btn btn-info btn-block' %>
+<% end %>
+<%= link_to "ホームに戻る", root_path, class: 'btn btn-warning btn-block' %>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h1>FakeTwitter</h1>
+    <%= link_to "ツイート", new_tweet_path, class: 'btn btn-info' %>
+    <br><br><br>
+    <% @tweets.reverse_each do |tweet| %>
+    <p><%= tweet.content %></p>
+    <%= link_to "編集", edit_tweet_path(tweet.id), data: { confirm: "本当に編集しますか？"}, class: 'btn btn-default btn-sm btn-success' %>
+    <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-default btn-sm btn btn-danger' %>
+    <!--idk(DIVE02):link_toメソッドはhttpをデフォルトでgetするので今回はdeleteを指定。ここ忘れないように-->
+    <br>
+    <br><br>
+    <% end %>
+    <div id="page-top-btn" class="page-top-btn">
+        <p><a class="move-page-top" id="move-page-top">▲</a></p>
+    </div>
+  </div>
+</div>
