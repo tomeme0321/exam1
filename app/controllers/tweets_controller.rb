@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
    if params[:back]
     @tweet = Tweet.new(tweets_params)
    else
-     @tweet = Tweet.new
+    @tweet = Tweet.new
    end
   end
   
@@ -25,8 +25,8 @@ class TweetsController < ApplicationController
   end
   
   def update
-    @tweet =Tweet.find(params[:id]) #値の取得
-   if @tweet.update(tweets_params) #取得した値を更新する
+    @tweet =Tweet.find(params[:id])
+   if @tweet.update(tweets_params)
      redirect_to root_path
    else
      render "edit"
@@ -35,7 +35,7 @@ class TweetsController < ApplicationController
   
   def destroy
     @tweet = Tweet.find(params[:id])
-    @tweet.destroy #(tweets_paramsはいらない)
+    @tweet.destroy
     redirect_to tweets_path
   end
 
