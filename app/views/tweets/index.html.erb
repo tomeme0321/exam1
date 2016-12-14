@@ -7,12 +7,10 @@
     <p><%= tweet.content %></p>
     <%= link_to "編集", edit_tweet_path(tweet.id), data: { confirm: "本当に編集しますか？"}, class: 'btn btn-default btn-sm btn-success' %>
     <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-default btn-sm btn btn-danger' %>
-    <!--idk(DIVE02):link_toメソッドはhttpをデフォルトでgetするので今回はdeleteを指定。ここ忘れないように-->
-    <br>
-    <br><br>
+    <br><br><br>
     <% end %>
     <div id="page-top-btn" class="page-top-btn">
-        <p><a class="move-page-top" id="move-page-top">▲</a></p>
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
     </div>
   </div>
 </div>
