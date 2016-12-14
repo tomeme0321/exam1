@@ -44,12 +44,8 @@ class TweetsController < ApplicationController
     render :new if @tweet.invalid?
   end
   
-  
-  
   private
   def tweets_params
     params.require(:tweet).permit(:content)
   end
-    
-  
 end
